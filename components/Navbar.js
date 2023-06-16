@@ -66,15 +66,15 @@ export default function Navbar() {
       >
         <a
           href="https://spellbeeuniverse.com/"
-          className={`hover:text-secondary hover:border-b-2 hover:border-secondary border-b-2 border-transparent text-black ${
-            toggleNavbar ? "py-4" : "py-2 px-4"
+          className={`hover:text-secondary ease-in-out duration-100 hover:border-1 hover:border-white hover:rounded-full hover:bg-white hover:bg-opacity-90  text-secondary ${
+            toggleNavbar ? "py-5" : "py-2 px-4"
           }`}
         >
           Home
         </a>
         <a
           href="https://spellbeeuniverse.com/about-us"
-          className={`hover:text-secondary hover:border-b-2 hover:border-secondary border-b-2 border-transparent text-black ${
+          className={`hover:text-secondary hover:border-1 hover:border-white hover:rounded-full hover:bg-white hover:bg-opacity-90 border-transparent text-secondary ${
             toggleNavbar ? "py-4" : "py-2 px-4"
           }`}
         >
@@ -82,7 +82,7 @@ export default function Navbar() {
         </a>
         <a
           href="https://spellbeeuniverse.com/game-format"
-          className={`hover:text-secondary hover:border-b-2 hover:border-secondary border-b-2 border-transparent text-black ${
+          className={`hover:text-secondary hover:border-1 hover:border-white hover:rounded-full hover:bg-white hover:bg-opacity-90 border-transparent text-secondary ${
             toggleNavbar ? "py-4" : "py-2 px-4"
           }`}
         >
@@ -90,7 +90,7 @@ export default function Navbar() {
         </a>
         <a
           href="https://spellbeeuniverse.com/contact-us"
-          className={`hover:text-secondary hover:border-b-2 hover:border-secondary border-b-2 border-transparent text-black ${
+          className={`hover:text-secondary hover:border-1 hover:border-white hover:rounded-full hover:bg-white hover:bg-opacity-90 border-transparent text-secondary ${
             toggleNavbar ? "py-4" : "py-2 px-4"
           }`}
         >
@@ -98,7 +98,7 @@ export default function Navbar() {
         </a>
         <a
           href="https://spellbeeuniverse.com/faq"
-          className={`hover:text-secondary hover:border-b-2 hover:border-secondary border-b-2 border-transparent text-black ${
+          className={`hover:text-secondary hover:border-1 hover:border-white hover:rounded-full hover:bg-white hover:bg-opacity-90 border-transparent text-secondary ${
             toggleNavbar ? "py-4" : "py-2 px-4"
           }`}
         >
