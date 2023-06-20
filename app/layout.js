@@ -25,8 +25,8 @@ export default function RootLayout({ children }) {
       <body
         className={`${poppins.variable} ${Lilita.variable} h-screen overflow-hidden`}
       >
-        <Navbar />
-        <main className="max-w-[1500px] mx-auto h-full">{children}</main>
+        {/* <Navbar /> */}
+        <main className="h-full">{children}</main>
       </body>
     </html>
   );
