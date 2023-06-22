@@ -3,10 +3,6 @@ import Button from "@/components/Button";
 import BackCloseButtons from "@/components/BackCloseButtons";
 import Image from "next/image";
 import pic from "../../assets/profile.jpg";
-import redHexagon from "../../assets/redHexagon.png";
-import purpleHexagon from "../../assets/purpHexagon.png";
-import casualBee from "../../assets/casualBee.svg";
-import competitiveBee from "../../assets/competitiveBee.svg";
 import rocketBee from "../../assets/RocketBee.png";
 
 export default function Home() {

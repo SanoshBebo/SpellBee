@@ -41,7 +41,7 @@ export default function home() {
             <Button
               inverted={true}
               text="PLAY"
-              containerClassName="w-full mb-4"
+              containerClassName="w-full mb-5"
               textClassName="py-5 font-lilita text-4xl"
             ></Button>
           </div>
@@ -49,7 +49,7 @@ export default function home() {
             <Button
               inverted={true}
               text="VOCABULARY"
-              containerClassName="w-full mb-4"
+              containerClassName="w-full mb-5"
               textClassName="py-5 font-lilita text-4xl"
             ></Button>
           </div>
@@ -57,7 +57,7 @@ export default function home() {
             <Button
               inverted={true}
               text="LEADERBOARDS"
-              containerClassName="w-full mb-4"
+              containerClassName="w-full mb-5"
               textClassName="py-5 font-lilita text-4xl"
             ></Button>
           </div>
