@@ -7,14 +7,23 @@ import redHexagon from "../../assets/redHexagon.png";
 import purpleHexagon from "../../assets/purpHexagon.png";
 import casualBee from "../../assets/casualBee.svg";
 import competitiveBee from "../../assets/competitiveBee.svg";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const goToScreen = (screen) => {
+    if (screen == "CASUAL") {
+      router.push("/casual");
+    } else screen == "COMPETITIVE";
+  };
+
   return (
     <div className="bg-primary h-full ">
       <BackCloseButtons></BackCloseButtons>
 
       <div className="bg-primary w-[25%] h-1/2 mx-auto">
-        <div className="flex justify-between flex-col items-center w-full ">
+        <div className="flex justify-between flex-col items-center w-full pt-16 ">
           <div className=" bg-white p-4 rounded-full mt-14">
             <Image
               src={pic}
@@ -38,7 +47,10 @@ export default function Home() {
       </div>
       <div className="flex gap-20 items-center justify-center h-2/5">
         <button className={"bg-[#5C2713] text-2xl rounded-xl text-white"}>
-          <div className="bg-secondary relative rounded-xl font-lilita px-10 py-3 -translate-y-3 uppercase text-3xl ">
+          <div
+            className="bg-secondary relative rounded-xl font-lilita px-10 py-3 -translate-y-3 uppercase text-3xl "
+            onClick={() => goToScreen("CASUAL")}
+          >
             <Image src={casualBee} width={200} height={200}></Image>
             <Image
               className="absolute top-3 right-3 -z-10"
@@ -69,7 +81,10 @@ export default function Home() {
           </div>
         </button>
         <button className={"bg-[#6325BB] rounded-xl text-white"}>
-          <div className="bg-[#945AE5] rounded-xl font-lilita px-10 py-3 -translate-y-3 uppercase text-3xl">
+          <div
+            className="bg-[#945AE5] rounded-xl font-lilita px-10 py-3 -translate-y-3 uppercase text-3xl"
+            onClick={() => goToScreen("COMPETITIVE")}
+          >
             <Image src={competitiveBee} width={200} height={200}></Image>
             <Image
               className="absolute top-3 right-3 -z-10 bg-[#945AE5]"

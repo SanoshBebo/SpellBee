@@ -16,30 +16,30 @@ export default function casual() {
   const firstOcc = [...answer].indexOf("_");
 
   const checkAnswer = (final) => {
-    console.log("hello world");
-    console.log(final.join(""));
-    if (final.join("") == solution) {
+    if (final.join("").toUpperCase() === solution) {
       console.log("wow correct");
     }
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", (e) => {
-      console.log(e.key);
-      if (e.key == "backspace") {
-        const reverseArr = [...broken].reverse();
-        var result = [...answer].reverse();
-
+    const handleKeyDown = (e) => {
+      const reverseArr = [...broken].reverse();
+      var result = [...answer].reverse();
+      if (e.key === "Backspace") {
         for (let i = 0; i < reverseArr.length; i++) {
-          if (result[i] != reverseArr[i]) {
+          if (result[i] !== reverseArr[i]) {
             result[i] = "_";
             break;
           }
         }
         setAnswer(result.reverse());
       }
-    });
-  }, []);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [answer]);
 
   return (
     <div className="bg-primary h-full ">
@@ -63,55 +63,39 @@ export default function casual() {
         />
       </div>
       <div className=" w-3/5 h-full mx-auto flex flex-col gap-5">
-        <div className="flex flex-col justify-center items-center py-1 mt-4 bg-white rounded-3xl font-lilita text-[#923717]">
+        <div className="flex flex-col justify-center items-center py-2 mt-4 bg-white rounded-3xl font-lilita text-[#923717]">
           <div>Stage 1</div>
           <div className="text-2xl">LEVEL 2</div>
         </div>
-        <div className="flex flex-row justify-between">
-          <div className="bg-white py-2 px-20 rounded-3xl font-lilita text-[#923717] text-xl">
+        <div className="flex flex-row justify-between py-3">
+          <div className="bg-white py-3 px-20 rounded-3xl font-lilita text-[#923717] text-xl">
             HINT 1
           </div>
-          <div className="bg-white py-2  px-20 rounded-3xl font-lilita text-[#923717] text-xl">
+          <div className="bg-white py-3  px-20 rounded-3xl font-lilita text-[#923717] text-xl">
             30s
           </div>
-          <div className="bg-white py-2  px-20 rounded-3xl font-lilita text-[#923717] text-xl">
+          <div className="bg-white py-3  px-20 rounded-3xl font-lilita text-[#923717] text-xl">
             HINT 2
           </div>
         </div>
-        <div className="bg-white py-10 flex items-center justify-center flex-col rounded-2xl gap-10">
-          <div className="bg-[#FFF7DE] rounded-full p-5 ">
+        <div className="bg-white py-16 flex items-center justify-center flex-col rounded-2xl gap-10">
+          <div className="bg-[#FFF7DE] rounded-full p-5">
             <div className="bg-[#FFEDB9] rounded-full p-5">
               <div className="bg-[#F7B807] rounded-full p-7 hover:cursor-pointer">
-                <Image src={volume} height={50} width={50} alt="volume" />
+                <Image src={volume} height={70} width={70} alt="volume" />
               </div>
             </div>
           </div>
 
-          <div className="flex flex-row uppercase">
+          <div className="flex flex-row uppercase py-6">
             {answer.map((item, index) => {
               if (item == "_" && firstOcc == index) {
                 return (
                   <input
-                    className="bg-tertiary rounded-sm w-6 h-10 mx-[2px] text-white pl-2 placeholder-white "
+                    className="bg-[#B7471E] rounded-sm w-8 h-10 mx-[2px] text-white pl-3 placeholder-white font-semibold"
                     placeholder="_"
                     key={index}
                     autoFocus
-                    // onKeyDown={(e) => {
-                    //   console.log(e.key);
-                    //   if (e.key == "backspace") {
-                    //     const reverseArr = [...broken].reverse();
-                    //     var result = [...answer].reverse();
-
-                    //     for (let i = 0; i < reverseArr.length; i++) {
-                    //       if (result[i] != reverseArr[i]) {
-                    //         result[i] = "_";
-                    //         break;
-                    //       }
-                    //     }
-
-                    //     setAnswer(result.reverse());
-                    //   }
-                    // }}
                     onChange={(text) => {
                       let copy = [...answer];
                       console.log(copy);
@@ -123,7 +107,7 @@ export default function casual() {
               } else {
                 return (
                   <div
-                    className="bg-tertiary rounded-sm  w-6 h-10 mx-[2px] text-white flex items-center justify-center"
+                    className="bg-[#B7471E] rounded-sm  w-8 h-10 mx-[2px] text-white flex items-center justify-center font-semibold"
                     key={index}
                   >
                     {item}
@@ -141,7 +125,7 @@ export default function casual() {
             ></Button>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 py-2">
           <div className="font-lilita text-white text-3xl "> GAME RULES:</div>
           <div className="ml-5 text-[#9D3D1A] font-poppins font-medium">
             <ul className="list-disc">

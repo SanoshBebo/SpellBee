@@ -17,7 +17,7 @@ export default function Home() {
     console.log(password);
   };
 
-  const onClick = () => {
+  const navigate = () => {
     router.push("/home");
   };
 
@@ -80,7 +80,7 @@ export default function Home() {
                     containerClassName="w-full mt-8"
                     textClassName="font-lilita py-3"
                     inverted={false}
-                    onClick={onClick}
+                    onClick={navigate}
                   />
 
                   <p className="text-white p-5 font-poppins font-light">
